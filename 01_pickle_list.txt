@@ -1,6 +1,9 @@
 DataFrame Name	Pickle Name	Description
 --------------	-------------	--------------------------------------------------------------------------------------
-houseAll	houseAll.pkl	Parcel level data from the assessor with all of the years stacked. Otherwise unedited
+rawHouse	rawHouse.pkl	raw house data
+house		house.pkl	cleaned house data
+groupList	groupList.pkl	key for Group-> Geo-Economic Area -> MLS Area
+houseAll	houseAll.pkl	cleaned house data with groupList joined for filtering 
 rawJobs		rawJobs.pkl	Jobs excel data, unedited
 metroJobs	metroJobs.pkl	Clean abbreviated jobs for Boise Metro Area 2000-2018
 rawPop1		rawPop1.pkl	Raw population for 2000-2009
