@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{multicol}
+\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{wrapfig}
 \usepackage{float}
@@ -75,8 +76,42 @@ KEY WORDS: Key word one; Key word two; Key word three; Key word four.
 
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width= .7\linewidth]{Area_fig.jpg}
+    \caption{Caption}
+    \label{fig: area_ccl}
+\end{figure}
 
-
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{BB_fig.jpg}
+         \caption{$y=x$}
+         \label{fig:y equals x}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{WB_fig.jpg}
+         \caption{$y=3sinx$}
+         \label{fig:three sin x}
+     \end{subfigure}
+          \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{NB_fig.jpg}
+         \caption{$y=3sinx$}
+         \label{fig:three sin x}
+     \end{subfigure}
+          \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{WBM_fig.jpg}
+         \caption{$y=3sinx$}
+         \label{fig:three sin x}
+     \end{subfigure}
+        \caption{Three simple graphs}
+        \label{fig:three graphs}
+\end{figure}
 
 
 \section{Comments and Conclusions}
@@ -113,6 +148,13 @@ Ada County Assessor's Office (July 8, 2019)
 % Compiled by Alan Smith Strategic Development Analyst
 %\newblock 
 
+
+\bibitem[\protect\astroncite{KWR}{2019}]{KWR:2019}
+Keller Williams Reality Boise (August 6, 2019)
+\newblock \textit{Boise Neighborhood Guide}.
+\newblock \url{https://www.weknowboise.com/boise-neighborhoods.php}
+
+
 \bibitem[\protect\astroncite{BLS}{2019}]{BLS:2019}
 United States Bureau of Labor Statistics (August 3, 2019)
 \newblock \textit{Occupational Employment Statistics}.
@@ -120,7 +162,7 @@ United States Bureau of Labor Statistics (August 3, 2019)
 \newblock \url{https://www.bls.gov/oes/tables.htm}
 
 \bibitem[\protect\astroncite{USC}{2019}]{ACAO:2019}
-U. S. Census Bureau, Population Division (August 4, 2019)
+United States Census Bureau, Population Division (August 4, 2019)
 \newblock \textit{Annual Estimates of Housing Units for the United States, Regions, Divisions, States, and Counties: April 1, 2010 to July 1, 2018 Release Date: May 2019}.
 % https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=PEP_2018_PEPANNHU&prodType=table
 %\newblock \url{https://www.bls.gov/oes/tables.htm}
