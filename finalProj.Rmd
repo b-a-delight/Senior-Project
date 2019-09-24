@@ -1,0 +1,116 @@
+---
+title: "srProj"
+author: "me"
+date: "9/23/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(caret)
+```
+
+http://www.sthda.com/english/articles/39-regression-model-diagnostics/160-multicollinearity-essentials-and-vif-in-r/
+
+
+
+
+
+```{r cars}
+df <- read.csv(file="C:/Users/delightb/Desktop/Final_Project/Senior-Project/Pickle/oneHotEncode.csv", header=TRUE, sep=",")
+df = df[-c(1:6,39:50)]
+df
+```
+```{r}
+set.seed(123)
+training.samples <- df$TAV_Ch %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data  <- df[training.samples, ]
+test.data <- df[-training.samples, ]
+# Build the model
+model1 <- lm(TAV_Ch ~., data = train.data)
+# Make predictions
+predictions <- model1 %>% predict(test.data)
+# Model performance
+data.frame(
+  RMSE = RMSE(predictions, test.data$TAV_Ch),
+  R2 = R2(predictions, test.data$TAV_Ch)
+)
+```
+
+
+```{r}
+car::vif(model1)
+
+```
+
+
+```{r}
+
+
+```
+
+New try
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+```{r }
+library(MASS)
+library(clusterGeneration)
+
+set.seed(123)
+num.vars<-44
+num.obs<-1052072
+cov.mat<-genPositiveDefMat(num.vars,covMethod="unifcorrmat")$Sigma
+rand.vars<-mvrnorm(num.obs,rep(0,num.vars),Sigma=cov.mat)
+```
+
+
+```{r}
+model1 = lm(TAV_Ch~., df)
+library(car)
+vif(model1)
+
+```
+
+```{r}
+vif(df, df$TAV_Ch)
+
+```
+
+```{r}
+library(usdm)
+#df = # Data Frame
+usdm::vif(df)
+```
+
+
+
+
+
+```{r}
+typeof(df)
+```
+
+
+```{r}
+apply(df, 2, function(x) any(is.infinite(x)))
+```
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+indx <- apply(df, 2, function(x) any(is.na(x) | is.infinite(x)))
+colnames[indx]
+
+```
